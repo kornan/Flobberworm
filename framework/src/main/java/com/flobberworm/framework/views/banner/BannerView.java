@@ -43,12 +43,12 @@ public class BannerView extends RelativeLayout {
     }
 
     private void init(Context context) {
-//        LayoutInflater.from(context).inflate(R.layout.fw_layout_auto_scroll, this);
-//        buttonPanel = findViewById(R.id.buttonPanel);
-//        viewPageAutoScroll = findViewById(R.id.viewPageAutoScroll);
-//        bannerAdapter = new BannerAdapter(context);
-//        viewPageAutoScroll.addOnPageChangeListener(new OnBannerPageChangeListener());
-//        viewPageAutoScroll.setAdapter(bannerAdapter);
+        LayoutInflater.from(context).inflate(R.layout.fw_layout_auto_scroll, this);
+        buttonPanel = findViewById(R.id.buttonPanel);
+        viewPageAutoScroll = findViewById(R.id.viewPageAutoScroll);
+        bannerAdapter = new BannerAdapter(context);
+        viewPageAutoScroll.addOnPageChangeListener(new OnBannerPageChangeListener());
+        viewPageAutoScroll.setAdapter(bannerAdapter);
     }
 
     /**

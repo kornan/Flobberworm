@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.qyueyy.mofread.views.banner.ViewPageAutoScroll
+    <com.flobberworm.framework.views.banner.ViewPageAutoScroll
         android:id="@+id/viewPageAutoScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
