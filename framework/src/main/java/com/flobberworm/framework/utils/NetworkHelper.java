@@ -16,6 +16,7 @@
 
 package com.flobberworm.framework.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -27,15 +28,15 @@ import android.telephony.TelephonyManager;
 public class NetworkHelper {
 
     /**
-     * 没有连接网络
+     * Not connected to the internet
      */
     public static final int NETWORK_NONE = -1;
     /**
-     * 移动网络
+     * mobile network
      */
     public static final int NETWORK_MOBILE = 0;
     /**
-     * 无线网络
+     * WIFI network
      */
     public static final int NETWORK_WIFI = 1;
 
@@ -46,18 +47,20 @@ public class NetworkHelper {
     public static boolean isOnline(Context context) {
         ConnectivityManager connMgr = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        @SuppressLint("MissingPermission")
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         return (networkInfo != null && networkInfo.isConnected());
     }
 
     /**
-     * 判断是否为WIFI
+     * Is it WIFI?
      *
-     * @param context 上下文
+     * @param context context
      * @return boolean
      */
     public static boolean isWifi(Context context) {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        @SuppressLint("MissingPermission")
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
         if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
             return true;
@@ -65,13 +68,13 @@ public class NetworkHelper {
             return false;
         }
     }
+
     public static int getNetWorkState(Context context) {
-        // 得到连接管理器对象
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        NetworkInfo activeNetworkInfo = connectivityManager
-                .getActiveNetworkInfo();
+        @SuppressLint("MissingPermission")
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
 
             if (activeNetworkInfo.getType() == (ConnectivityManager.TYPE_WIFI)) {
@@ -86,18 +89,20 @@ public class NetworkHelper {
     }
 
     /**
-     *  获取网络的类型
-     * @param context 上下文
+     * Get the type of network
+     *
+     * @param context context
      * @return type
      */
     public static int getNetWorkStatus(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        @SuppressLint("MissingPermission")
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         return networkInfo.getType();
     }
 
     /***
-     *  获取移动网络的类型
+     *  Get the type of mobile network
      *  param context
      */
     private static boolean isFastMobileNetwork(Context context) {

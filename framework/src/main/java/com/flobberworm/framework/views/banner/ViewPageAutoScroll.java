@@ -49,9 +49,6 @@ public class ViewPageAutoScroll extends ViewPager {
         }
     }
 
-    /**
-     * 开始计时
-     */
     public void startTimer() {
         timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -62,16 +59,13 @@ public class ViewPageAutoScroll extends ViewPager {
                         if (position >= getAdapter().getCount()) {
                             position = 0;
                         }
-                        ViewPageAutoScroll.this.setCurrentItem(position);//设置控件当前项（改变图片）
+                        ViewPageAutoScroll.this.setCurrentItem(position);
                     }
                 });
             }
         }, mScrollTime, mScrollTime);
     }
 
-    /**
-     * 停止计时
-     */
     public void stopTimer() {
         if (timer != null) {
             timer.cancel();
@@ -79,32 +73,4 @@ public class ViewPageAutoScroll extends ViewPager {
         }
     }
 
-//
-//    public void setNestedpParent(ViewGroup parent) {
-//        this.parent = parent;
-//    }
-//
-//    @Override
-//    public boolean dispatchTouchEvent(MotionEvent ev) {
-//        if (parent != null) {
-//            parent.requestDisallowInterceptTouchEvent(true);
-//        }
-//        return super.dispatchTouchEvent(ev);
-//    }
-//
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent arg0) {
-//        if (parent != null) {
-//            parent.requestDisallowInterceptTouchEvent(true);
-//        }
-//        return super.onInterceptTouchEvent(arg0);
-//    }
-//
-//    @Override
-//    public boolean onTouchEvent(MotionEvent arg0) {
-//        if (parent != null) {
-//            parent.requestDisallowInterceptTouchEvent(true);
-//        }
-//        return super.onTouchEvent(arg0);
-//    }
 }

@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+
+tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+
+
 android {
     compileSdkVersion 27
 
@@ -21,11 +25,14 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
 
 //    testImplementation 'junit:junit:4.12'
 //    androidTestImplementation 'com.android.support.test:runner:1.0.1'
@@ -48,11 +55,14 @@ dependencies {
     implementation "com.android.support:design:${supportVersion}"
 
 }
+
+
+
 publish {
     userOrg = 'kornan'
     groupId = 'com.flobberworm.framework'
-    artifactId = 'framework'//项目名称
-    publishVersion = '0.0.1'//版本号
+    artifactId = 'framework'
+    publishVersion = '0.0.1'
     desc = 'flobberworm framework'
     website = 'https://github.com/kornan/flobberworm'
 }

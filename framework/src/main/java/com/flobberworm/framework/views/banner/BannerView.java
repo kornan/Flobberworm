@@ -17,7 +17,7 @@ import java.util.List;
 
 
 /**
- * Introduction:
+ * BannerView:
  * Created by KORNAN on 2016/9/20.
  */
 public class BannerView extends RelativeLayout {
@@ -52,9 +52,8 @@ public class BannerView extends RelativeLayout {
     }
 
     /**
-     * 添加滚动监听
      *
-     * @param onPageChangeListener 事件
+     * @param onPageChangeListener listener
      */
     public void addOnPageChangeListener(ViewPager.OnPageChangeListener onPageChangeListener) {
         viewPageAutoScroll.addOnPageChangeListener(onPageChangeListener);
@@ -81,9 +80,6 @@ public class BannerView extends RelativeLayout {
         return bannerAdapter.getBannerList();
     }
 
-    /**
-     * 添加圆点
-     */
     private void addDotView(boolean selected) {
         AppCompatImageView btn = new AppCompatImageView(getContext());
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -96,7 +92,6 @@ public class BannerView extends RelativeLayout {
     }
 
     /**
-     * 开始滚动
      *
      * @param mActivity
      * @param mScrollTime
@@ -106,7 +101,6 @@ public class BannerView extends RelativeLayout {
     }
 
     /**
-     * 开始滚动
      *
      * @param mActivity
      */
@@ -115,7 +109,6 @@ public class BannerView extends RelativeLayout {
     }
 
     /**
-     * 停止滚动
      */
     public void stop() {
         viewPageAutoScroll.stopTimer();

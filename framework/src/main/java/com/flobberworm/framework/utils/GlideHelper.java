@@ -29,7 +29,7 @@ public class GlideHelper {
         Glide.with(BaseApplication.getInstance())
                 .load(imageUrl)
                 .crossFade()
-                .bitmapTransform(new BlurTransformation(BaseApplication.getInstance()))  // “23”：设置模糊度(在0.0到25.0之间)，默认”25";"4":图片缩放比例,默认“1”。
+                .bitmapTransform(new BlurTransformation(BaseApplication.getInstance()))
                 .into(imageView);
     }
 
@@ -87,7 +87,7 @@ public class GlideHelper {
     }
 
     /**
-     * 设置圆形图
+     * set RoundedBitmapDrawable
      *
      * @param context
      * @param imageView
@@ -106,39 +106,32 @@ public class GlideHelper {
         };
     }
 
-    private static RoundedBitmapDrawable createRoundImageWithBorder(Context context, Bitmap bitmap) {
-        //原图宽度
-        int bitmapWidth = bitmap.getWidth();
-        //原图高度
-        int bitmapHeight = bitmap.getHeight();
-        //边框宽度 pixel
-        int borderWidthHalf = 20;
-
-        //转换为正方形后的宽高
-        int bitmapSquareWidth = Math.min(bitmapWidth, bitmapHeight);
-
-        //最终图像的宽高
-        int newBitmapSquareWidth = bitmapSquareWidth + borderWidthHalf;
-
-        Bitmap roundedBitmap = Bitmap.createBitmap(newBitmapSquareWidth, newBitmapSquareWidth, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(roundedBitmap);
-        int x = borderWidthHalf + bitmapSquareWidth - bitmapWidth;
-        int y = borderWidthHalf + bitmapSquareWidth - bitmapHeight;
-
-        //裁剪后图像,注意X,Y要除以2 来进行一个中心裁剪
-        canvas.drawBitmap(bitmap, x / 2, y / 2, null);
-        Paint borderPaint = new Paint();
-        borderPaint.setStyle(Paint.Style.STROKE);
-        borderPaint.setStrokeWidth(borderWidthHalf);
-        borderPaint.setColor(Color.WHITE);
-
-        //添加边框
-        canvas.drawCircle(canvas.getWidth() / 2, canvas.getWidth() / 2, newBitmapSquareWidth / 2, borderPaint);
-
-        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(context.getResources(), roundedBitmap);
-        roundedBitmapDrawable.setGravity(Gravity.CENTER);
-        roundedBitmapDrawable.setCircular(true);
-        return roundedBitmapDrawable;
-    }
+//    private static RoundedBitmapDrawable createRoundImageWithBorder(Context context, Bitmap bitmap) {
+//        int bitmapWidth = bitmap.getWidth();
+//        int bitmapHeight = bitmap.getHeight();
+//        int borderWidthHalf = 20;
+//
+//        int bitmapSquareWidth = Math.min(bitmapWidth, bitmapHeight);
+//
+//        int newBitmapSquareWidth = bitmapSquareWidth + borderWidthHalf;
+//
+//        Bitmap roundedBitmap = Bitmap.createBitmap(newBitmapSquareWidth, newBitmapSquareWidth, Bitmap.Config.ARGB_8888);
+//        Canvas canvas = new Canvas(roundedBitmap);
+//        int x = borderWidthHalf + bitmapSquareWidth - bitmapWidth;
+//        int y = borderWidthHalf + bitmapSquareWidth - bitmapHeight;
+//
+//        canvas.drawBitmap(bitmap, x / 2, y / 2, null);
+//        Paint borderPaint = new Paint();
+//        borderPaint.setStyle(Paint.Style.STROKE);
+//        borderPaint.setStrokeWidth(borderWidthHalf);
+//        borderPaint.setColor(Color.WHITE);
+//
+//        canvas.drawCircle(canvas.getWidth() / 2, canvas.getWidth() / 2, newBitmapSquareWidth / 2, borderPaint);
+//
+//        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(context.getResources(), roundedBitmap);
+//        roundedBitmapDrawable.setGravity(Gravity.CENTER);
+//        roundedBitmapDrawable.setCircular(true);
+//        return roundedBitmapDrawable;
+//    }
 
 }

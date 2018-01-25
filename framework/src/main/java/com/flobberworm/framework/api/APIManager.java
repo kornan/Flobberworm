@@ -22,7 +22,7 @@ import static com.flobberworm.framework.api.NetConfig.CACHE_NAME;
 
 
 /**
- * ApiManager API管理类
+ * ApiManager API
  * Created by kornan on 2017/8/27.
  */
 public class APIManager {
