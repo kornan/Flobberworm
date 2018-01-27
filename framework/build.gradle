@@ -62,7 +62,7 @@ publish {
     userOrg = 'kornan'
     groupId = 'com.flobberworm.framework'
     artifactId = 'framework'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     desc = 'flobberworm framework'
     website = 'https://github.com/kornan/flobberworm'
 }
