@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.flobberworm.framework.views.banner.ViewPageAutoScroll
+        android:id="@+id/viewPageAutoScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.v7.widget.ButtonBarLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/viewPageAutoScroll"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+
+    </android.support.v7.widget.ButtonBarLayout>
+</RelativeLayout>
