@@ -41,7 +41,7 @@ dependencies {
 publish {
     userOrg = 'kornan'
     groupId = 'com.flobberworm.banner'
-    artifactId = 'framework'
+    artifactId = 'banner'
     publishVersion = '0.0.1'
     desc = 'flobberworm banner'
     website = 'https://github.com/kornan/flobberworm'

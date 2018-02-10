@@ -21,14 +21,18 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:${supportVersion}"
+//    implementation "com.android.support:appcompat-v7:${supportVersion}"
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.flobberworm:LoadRecyclerView:0.2.3'
     implementation project(':framework')
 
@@ -41,7 +45,7 @@ dependencies {
 publish {
     userOrg = 'kornan'
     groupId = 'com.flobberworm.ui'
-    artifactId = 'framework'
+    artifactId = 'ui'
     publishVersion = '0.0.1'
     desc = 'flobberworm ui'
     website = 'https://github.com/kornan/flobberworm'
