@@ -20,6 +20,9 @@ public abstract class BaseAdapter<V extends RecyclerView.ViewHolder, T> extends 
         this.dataList = dataList;
     }
 
+    public T getData(int position) {
+        return dataList.get(position);
+    }
 
     @Override
     public int getItemCount() {

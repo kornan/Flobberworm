@@ -1,1 +1,1 @@
-include  ':myapplication', ':framework'
+include  ':myapplication', ':framework', ':ui'
