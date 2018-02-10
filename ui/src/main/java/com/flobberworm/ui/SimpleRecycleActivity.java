@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.flobberworm.framework.base.BaseActivity;
+import com.flobberworm.framework.base.BaseDagger2Activity;
 import com.flobberworm.framework.module.BaseAdapter;
 import com.flobberworm.framework.module.Page;
 import com.flobberworm.framework.views.layout.LoadingAndRetryManager;
@@ -19,7 +19,7 @@ import com.flobberworm.load.RecyclerManager;
  * Created by Kornan on 2018/1/30.
  */
 
-public abstract class BaseRecycleActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, ItemClickSupport.OnItemClickListener, OnLoadMoreListener {
+public abstract class SimpleRecycleActivity extends BaseDagger2Activity implements SwipeRefreshLayout.OnRefreshListener, ItemClickSupport.OnItemClickListener, OnLoadMoreListener {
 
     //    protected RecyclerView recyclerView;
 
