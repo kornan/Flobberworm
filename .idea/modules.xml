@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/library/banner/library-banner.iml" filepath="$PROJECT_DIR$/library/banner/library-banner.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/framework/library-framework.iml" filepath="$PROJECT_DIR$/library/framework/library-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/ui/library-ui.iml" filepath="$PROJECT_DIR$/library/ui/library-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
     </modules>
   </component>
 </project>
