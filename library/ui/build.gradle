@@ -6,7 +6,7 @@ tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 
 android {
     compileSdkVersion 27
-
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
@@ -29,13 +29,13 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation "com.android.support:appcompat-v7:${supportVersion}"
+    implementation "com.android.support:appcompat-v7:${supportVersion}"
     testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.flobberworm:LoadRecyclerView:0.2.3'
-    implementation project(':framework')
-
+    implementation project(':library-framework')
+//    implementation project(modulePrefix + 'framework')
     implementation 'com.google.dagger:dagger:2.11'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     implementation 'com.google.dagger:dagger-android-support:2.11'

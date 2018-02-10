@@ -8,10 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/banner" />
-            <option value="$PROJECT_DIR$/framework" />
-            <option value="$PROJECT_DIR$/myapplication" />
-            <option value="$PROJECT_DIR$/ui" />
+            <option value="$PROJECT_DIR$/library/banner" />
+            <option value="$PROJECT_DIR$/library/framework" />
+            <option value="$PROJECT_DIR$/library/ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

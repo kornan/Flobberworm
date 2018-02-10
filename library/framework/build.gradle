@@ -6,7 +6,7 @@ tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 
 android {
     compileSdkVersion 27
-
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
@@ -56,13 +56,11 @@ dependencies {
 
 }
 
-
-
 publish {
     userOrg = 'kornan'
     groupId = 'com.flobberworm.framework'
     artifactId = 'framework'
-    publishVersion = '0.0.4'
+    publishVersion = '0.0.5'
     desc = 'flobberworm framework'
     website = 'https://github.com/kornan/flobberworm'
 }

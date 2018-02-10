@@ -1,1 +1,18 @@
-include  ':myapplication', ':framework', ':ui', ':banner'
+//include  ':myapplication', ':framework', ':ui', ':banner'
+
+
+gradle.ext.exoplayerRoot = settingsDir
+
+def modulePrefix = ':'
+if (gradle.ext.has('exoplayerModulePrefix')) {
+    modulePrefix += gradle.ext.exoplayerModulePrefix
+}
+
+//include modulePrefix + 'framework'
+//include modulePrefix + 'demo-ima'
+//include modulePrefix + 'playbacktests'
+//project(modulePrefix + 'framework').projectDir = new File(rootDir, 'demos/main')
+//project(modulePrefix + 'demo-ima').projectDir = new File(rootDir, 'demos/ima')
+//project(modulePrefix + 'playbacktests').projectDir = new File(rootDir, 'playbacktests')
+
+apply from: 'core_settings.gradle'

@@ -3,10 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Framework.iml" filepath="$PROJECT_DIR$/Framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/banner/library-banner.iml" filepath="$PROJECT_DIR$/library/banner/library-banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/framework/library-framework.iml" filepath="$PROJECT_DIR$/library/framework/library-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/ui/library-ui.iml" filepath="$PROJECT_DIR$/library/ui/library-ui.iml" />
     </modules>
   </component>
 </project>
