@@ -32,7 +32,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation 'com.flobberworm:LoadRecyclerView:0.2.3'
+    implementation 'com.flobberworm:LoadRecyclerView:0.2.4'
     implementation project(':library-framework')
 //    implementation project(modulePrefix + 'framework')
     implementation 'com.google.dagger:dagger:2.11'
@@ -45,7 +45,7 @@ publish {
     userOrg = 'kornan'
     groupId = 'com.flobberworm.ui'
     artifactId = 'ui'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     desc = 'flobberworm ui'
     website = 'https://github.com/kornan/flobberworm'
 }

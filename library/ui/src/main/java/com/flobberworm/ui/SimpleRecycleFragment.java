@@ -21,15 +21,14 @@ import com.flobberworm.load.RecyclerManager;
  */
 
 public abstract class SimpleRecycleFragment extends BaseDagger2Fragment
-        implements SwipeRefreshLayout.OnRefreshListener, ItemClickSupport.OnItemClickListener, OnLoadMoreListener {
-    //    protected RecyclerView recyclerView;
+        implements SwipeRefreshLayout.OnRefreshListener, ItemClickSupport.OnItemClickListener, OnLoadMoreListener, LoadManager.OnLoadListener {
     private SwipeRefreshLayout swipeRefreshLayout;
     private BaseAdapter adapter;
-    //    protected BaseAdapter adapter;
     protected Page page;
     protected RecyclerManager recyclerManager;
 
     protected LoadingAndRetryManager mLoadingAndRetryManager;
+    protected LoadManager loadManager;
 
     @Override
     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
@@ -67,6 +66,10 @@ public abstract class SimpleRecycleFragment extends BaseDagger2Fragment
         }
     }
 
+    public void initLoadManager() {
+        loadManager = new LoadManager(this);
+    }
+
     public void initSwipeRefreshLayout(SwipeRefreshLayout swipeRefreshLayout) {
         this.swipeRefreshLayout = swipeRefreshLayout;
 //        ViewUtils.setColorScheme(swipeRefreshLayout);
@@ -93,68 +96,29 @@ public abstract class SimpleRecycleFragment extends BaseDagger2Fragment
 
     public abstract void request();
 
-    public void initLoadingAndRetryManager(final View view, final String title) {
-        if (mLoadingAndRetryManager != null) {
-            return;
-        }
-        mLoadingAndRetryManager = LoadingAndRetryManager.generate(view, new OnLoadingAndRetryListener() {
-            @Override
-            public void setRetryEvent(View retryView) {
-                TextView tvMessage = retryView.findViewById(R.id.tv_message);
-                tvMessage.setText(title);
-                retryView.findViewById(R.id.lay_root).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mLoadingAndRetryManager.showLoading();
-                    }
-                });
-            }
 
-            @Override
-            public void setEmptyEvent(View emptyView) {
-                super.setEmptyEvent(emptyView);
-                TextView tvMessage = emptyView.findViewById(R.id.textView);
-                tvMessage.setText(title);
-                emptyView.findViewById(R.id.lay_root).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mLoadingAndRetryManager.showLoading();
-                    }
-                });
-            }
-        });
+    @Override
+    public void onFailure(int code, String error) {
+        super.onFailure(code, error);
+        loadManager.getmLoadingAndRetryManager().showRetry();
     }
 
-    public void initLoadingAndRetryManager(final Fragment fragment, final String title) {
-        if (mLoadingAndRetryManager != null) {
-            return;
-        }
-        mLoadingAndRetryManager = LoadingAndRetryManager.generate(fragment, new OnLoadingAndRetryListener() {
-            @Override
-            public void setRetryEvent(View retryView) {
-                TextView tvMessage = retryView.findViewById(R.id.tv_message);
-                tvMessage.setText(title);
-                retryView.findViewById(R.id.lay_root).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mLoadingAndRetryManager.showLoading();
-                    }
-                });
-            }
+    @Override
+    public void onNetworkError() {
+        super.onNetworkError();
+        loadManager.getmLoadingAndRetryManager().showRetry();
+    }
 
-            @Override
-            public void setEmptyEvent(View emptyView) {
-                super.setEmptyEvent(emptyView);
-                TextView tvMessage = emptyView.findViewById(R.id.textView);
-                tvMessage.setText(title);
-                emptyView.findViewById(R.id.lay_root).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mLoadingAndRetryManager.showLoading();
-                    }
-                });
-            }
-        });
+    @Override
+    public void onTimeout() {
+        super.onTimeout();
+        loadManager.getmLoadingAndRetryManager().showRetry();
+    }
+
+    @Override
+    public void onUnknownError(int code, String error) {
+        super.onUnknownError(code, error);
+        loadManager.getmLoadingAndRetryManager().showRetry();
     }
 
 }

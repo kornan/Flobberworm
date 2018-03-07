@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 
@@ -41,11 +41,11 @@ dependencies {
 }
 
 
-publish {
-    userOrg = 'kornan'
-    groupId = 'com.flobberworm.banner'
-    artifactId = 'banner'
-    publishVersion = '0.0.1'
-    desc = 'flobberworm banner'
-    website = 'https://github.com/kornan/flobberworm'
-}
+//publish {
+//    userOrg = 'kornan'
+//    groupId = 'com.flobberworm.banner'
+//    artifactId = 'banner'
+//    publishVersion = '0.0.1'
+//    desc = 'flobberworm banner'
+//    website = 'https://github.com/kornan/flobberworm'
+//}
